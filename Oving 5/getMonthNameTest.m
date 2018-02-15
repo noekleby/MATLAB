@@ -1,0 +1,13 @@
+assert ( strcmp ( getMonthName (1) , 'Januar' ),'getMonthName (1) skriver ikke ut Januar ') ;
+assert ( strcmp ( getMonthName (2) , 'Februar' ),'getMonthName (2) skriver ikke ut Februar ');
+assert ( strcmp ( getMonthName (3) , 'Mars' ),'getMonthName (3) skriver ikke ut Mars ') ;
+assert ( strcmp ( getMonthName (4) , 'April' ),'getMonthName (4) skriver ikke ut April ') ;
+assert ( strcmp ( getMonthName (5) , 'Mai' ),'getMonthName (5) skriver ikke ut Mai ') ;
+assert ( strcmp ( getMonthName (6) , 'Juni' ),'getMonthName (6) skriver ikke ut Juni ') ;
+assert ( strcmp ( getMonthName (7) , 'Juli' ),'getMonthName (7) skriver ikke ut Juli ') ;
+assert ( strcmp ( getMonthName (8) , 'August' ),'getMonthName (8) skriver ikke ut August ') ;
+assert ( strcmp ( getMonthName (9) , 'September' ),'getMonthName (9) skriver ikke ut September ') ;
+assert ( strcmp ( getMonthName (10) , 'Oktober' ),'getMonthName (10) skriver ikke ut Oktober ') ;
+assert ( strcmp ( getMonthName (11) , 'November' ),'getMonthName (11) skriver ikke ut November ') ;
+assert ( strcmp ( getMonthName (12) , 'Desember' ),'getMonthName (12) skriver ikke ut Desember ') ;
+getMonthName(0);

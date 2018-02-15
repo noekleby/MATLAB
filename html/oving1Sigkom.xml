@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mscript xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <version>8.3</version>
+   <release>2014a</release>
+   <date>2015-01-16</date>
+   <cell style="overview">
+      <count>1</count>
+      <steptitle style="document">Øving 1 - Signalbehandling</steptitle>
+      <text>
+         <ul>
+            <li>Magnus Nøkleby Pedersen (magnusnp)</li>
+            <li>MTEL</li>
+         </ul>
+      </text>
+      <cellOutputTarget>1</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>2</count>
+      <steptitle>Problem 1</steptitle>
+      <cellOutputTarget>2</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>3</count>
+      <steptitle>a)</steptitle>
+      <mcode>A = [1 2; 3 4]
+B = [2 -1; 0 1]
+v = [0 0 1]
+C = A*B</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">A = [1 2; 3 4]
+B = [2 -1; 0 1]
+v = [0 0 1]
+C = A*B</mwsh:code></mcode-xmlized>
+      <mcode-count>1</mcode-count>
+      <cellOutputTarget>3</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+A =
+
+     1     2
+     3     4
+
+
+B =
+
+     2    -1
+     0     1
+
+
+v =
+
+     0     0     1
+
+
+C =
+
+     2     1
+     6     1
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>4</count>
+      <text>
+         <p>Multiplisere matrisene komponentvis:</p>
+      </text>
+      <mcode>D = A.*B</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">D = A.*B</mwsh:code></mcode-xmlized>
+      <mcode-count>2</mcode-count>
+      <cellOutputTarget>4</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+D =
+
+     2    -2
+     0     4
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>5</count>
+      <text>
+         <p>Transponerer matrise v</p>
+      </text>
+      <mcode>vT = transpose(v)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">vT = transpose(v)</mwsh:code></mcode-xmlized>
+      <mcode-count>3</mcode-count>
+      <cellOutputTarget>5</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+vT =
+
+     0
+     0
+     1
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>6</count>
+      <steptitle>b)</steptitle>
+      <mcode>y = zeros(1,10)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">y = zeros(1,10)</mwsh:code></mcode-xmlized>
+      <mcode-count>4</mcode-count>
+      <cellOutputTarget>6</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+y =
+
+     0     0     0     0     0     0     0     0     0     0
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>7</count>
+      <text>
+         <p>Even indexed elements = Pi</p>
+      </text>
+      <cellOutputTarget>7</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>8</count>
+      <text>
+         <p>Solution 1:</p>
+      </text>
+      <mcode>for i=2:2:10
+    y(i) = pi;
+end</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve"><mwsh:keywords xml:space="preserve">for</mwsh:keywords> i=2:2:10
+    y(i) = pi;
+<mwsh:keywords xml:space="preserve">end</mwsh:keywords></mwsh:code></mcode-xmlized>
+      <mcode-count>5</mcode-count>
+      <cellOutputTarget>8</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>9</count>
+      <text>
+         <p>Solution 2:</p>
+      </text>
+      <mcode>y([2:2:end]) = pi</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">y([2:2:end]) = pi</mwsh:code></mcode-xmlized>
+      <mcode-count>6</mcode-count>
+      <cellOutputTarget>9</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+y =
+
+  Columns 1 through 7
+
+         0    3.1416         0    3.1416         0    3.1416         0
+
+  Columns 8 through 10
+
+    3.1416         0    3.1416
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>10</count>
+      <steptitle>Problem 2</steptitle>
+      <mcode>z1 = 2*exp((pi/6)*j);
+z2 = j-1;</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">z1 = 2*exp((pi/6)*j);
+z2 = j-1;</mwsh:code></mcode-xmlized>
+      <mcode-count>7</mcode-count>
+      <cellOutputTarget>10</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>11</count>
+      <steptitle>a) Imaginary and real parts:</steptitle>
+      <text>
+         <p>Z1:</p>
+      </text>
+      <mcode>imag(z1)
+real(z1)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">imag(z1)
+real(z1)</mwsh:code></mcode-xmlized>
+      <mcode-count>8</mcode-count>
+      <cellOutputTarget>11</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+    1.0000
+
+
+ans =
+
+    1.7321
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>12</count>
+      <text>
+         <p>Z2^*:</p>
+      </text>
+      <mcode>imag(conj(z2))
+real(conj(z1))</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">imag(conj(z2))
+real(conj(z1))</mwsh:code></mcode-xmlized>
+      <mcode-count>9</mcode-count>
+      <cellOutputTarget>12</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+    -1
+
+
+ans =
+
+    1.7321
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>13</count>
+      <text>
+         <p>Z1*Z2:</p>
+      </text>
+      <mcode>imag(z1*z2)
+real(z1*z2)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">imag(z1*z2)
+real(z1*z2)</mwsh:code></mcode-xmlized>
+      <mcode-count>10</mcode-count>
+      <cellOutputTarget>13</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+    0.7321
+
+
+ans =
+
+   -2.7321
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>14</count>
+      <text>
+         <p>Z1/Z2:</p>
+      </text>
+      <mcode>imag(z1/z2)
+real(z1/z2)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">imag(z1/z2)
+real(z1/z2)</mwsh:code></mcode-xmlized>
+      <mcode-count>11</mcode-count>
+      <cellOutputTarget>14</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+   -1.3660
+
+
+ans =
+
+   -0.3660
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>15</count>
+      <steptitle>b) Absolute value and argument:</steptitle>
+      <text>
+         <p>Z1^*:</p>
+      </text>
+      <mcode>abs(conj(z1))
+angle(conj(z1))</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">abs(conj(z1))
+angle(conj(z1))</mwsh:code></mcode-xmlized>
+      <mcode-count>12</mcode-count>
+      <cellOutputTarget>15</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+     2
+
+
+ans =
+
+   -0.5236
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>16</count>
+      <text>
+         <p>Z2:</p>
+      </text>
+      <mcode>abs(z2)
+angle(conj(z2))</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">abs(z2)
+angle(conj(z2))</mwsh:code></mcode-xmlized>
+      <mcode-count>13</mcode-count>
+      <cellOutputTarget>16</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+    1.4142
+
+
+ans =
+
+   -2.3562
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>17</count>
+      <text>
+         <p>Z1*Z2:</p>
+      </text>
+      <mcode>abs(z1*z2)
+angle(z1*z2)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">abs(z1*z2)
+angle(z1*z2)</mwsh:code></mcode-xmlized>
+      <mcode-count>14</mcode-count>
+      <cellOutputTarget>17</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+    2.8284
+
+
+ans =
+
+    2.8798
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>18</count>
+      <text>
+         <p>Z1/Z2:</p>
+      </text>
+      <mcode>abs(z1/z2)
+angle(z1/z2)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">abs(z1/z2)
+angle(z1/z2)</mwsh:code></mcode-xmlized>
+      <mcode-count>15</mcode-count>
+      <cellOutputTarget>18</cellOutputTarget>
+      <mcodeoutput class="codeoutput">
+ans =
+
+    1.4142
+
+
+ans =
+
+   -1.8326
+
+</mcodeoutput>
+   </cell>
+   <cell>
+      <count>19</count>
+      <steptitle>Problem 3</steptitle>
+      <text>
+         <p>y1 = sin(t)</p>
+      </text>
+      <cellOutputTarget>19</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>20</count>
+      <text>
+         <p>y2 = t^2 + cos(t) + e^(t^2)/(10^16)</p>
+      </text>
+      <cellOutputTarget>20</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>21</count>
+      <steptitle>a)</steptitle>
+      <mcode>t = 0:0.01;2*pi;
+y1 = sin(t);
+y2 = t.^2 + cos(t) + exp(t.^2)/(10.^16);
+plot(t, sin(t))
+title('sin(t), t\in [0,2\pi]')
+ylabel('y1')
+figure
+plot(t, y2, 'r')
+xlabel('t')
+ylabel('y2')
+title('t^2 + cos(t) + e^{t^2}/10^{16}, t \in [0, 2\pi]')
+xlabel('t')</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">t = 0:0.01;2*pi;
+y1 = sin(t);
+y2 = t.^2 + cos(t) + exp(t.^2)/(10.^16);
+plot(t, sin(t))
+title(<mwsh:strings xml:space="preserve">'sin(t), t\in [0,2\pi]'</mwsh:strings>)
+ylabel(<mwsh:strings xml:space="preserve">'y1'</mwsh:strings>)
+figure
+plot(t, y2, <mwsh:strings xml:space="preserve">'r'</mwsh:strings>)
+xlabel(<mwsh:strings xml:space="preserve">'t'</mwsh:strings>)
+ylabel(<mwsh:strings xml:space="preserve">'y2'</mwsh:strings>)
+title(<mwsh:strings xml:space="preserve">'t^2 + cos(t) + e^{t^2}/10^{16}, t \in [0, 2\pi]'</mwsh:strings>)
+xlabel(<mwsh:strings xml:space="preserve">'t'</mwsh:strings>)</mwsh:code></mcode-xmlized>
+      <mcode-count>16</mcode-count>
+      <cellOutputTarget>21</cellOutputTarget>
+      <img src="oving1Sigkom_01.png"/>
+      <img src="oving1Sigkom_02.png"/>
+   </cell>
+   <cell>
+      <count>22</count>
+      <text>
+         <p>Subplots av funksjonene Y1 og Y2:</p>
+      </text>
+      <mcode>subplot(2,1,1);
+plot(t,sin(t),'r');
+ylabel('y = sin(t)');
+subplot(2,1,2);
+plot(t,t.^2 + cos(t) + exp(t.^2)/(10.^16));
+axis([0,2*pi,0,5]);
+xlabel('t'); ylabel('y = t^2 + cos(t) + e^(t^2)/(10^16)');
+subplot(111)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">subplot(2,1,1);
+plot(t,sin(t),<mwsh:strings xml:space="preserve">'r'</mwsh:strings>);
+ylabel(<mwsh:strings xml:space="preserve">'y = sin(t)'</mwsh:strings>);
+subplot(2,1,2);
+plot(t,t.^2 + cos(t) + exp(t.^2)/(10.^16));
+axis([0,2*pi,0,5]);
+xlabel(<mwsh:strings xml:space="preserve">'t'</mwsh:strings>); ylabel(<mwsh:strings xml:space="preserve">'y = t^2 + cos(t) + e^(t^2)/(10^16)'</mwsh:strings>);
+subplot(111)</mwsh:code></mcode-xmlized>
+      <mcode-count>17</mcode-count>
+      <cellOutputTarget>22</cellOutputTarget>
+      <img src="oving1Sigkom_03.png"/>
+   </cell>
+   <cell>
+      <count>23</count>
+      <steptitle>b) Plot av diskret signal</steptitle>
+      <mcode>n = -10:10;
+stem(n, sin(2*pi*(n/10)));
+title('y3(n) = sin(2*pi*(n/10))');
+xlabel('n');
+ylabel('y');</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">n = -10:10;
+stem(n, sin(2*pi*(n/10)));
+title(<mwsh:strings xml:space="preserve">'y3(n) = sin(2*pi*(n/10))'</mwsh:strings>);
+xlabel(<mwsh:strings xml:space="preserve">'n'</mwsh:strings>);
+ylabel(<mwsh:strings xml:space="preserve">'y'</mwsh:strings>);</mwsh:code></mcode-xmlized>
+      <mcode-count>18</mcode-count>
+      <cellOutputTarget>23</cellOutputTarget>
+      <img src="oving1Sigkom_04.png"/>
+   </cell>
+   <cell>
+      <count>24</count>
+      <steptitle>Problem 4</steptitle>
+      <cellOutputTarget>24</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>25</count>
+      <steptitle>a) Lese inn Dolly.wav og høre på den:</steptitle>
+      <mcode>[y,Fs] = audioread('Dolly.wav');
+soundsc(y,Fs)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">[y,Fs] = audioread(<mwsh:strings xml:space="preserve">'Dolly.wav'</mwsh:strings>);
+soundsc(y,Fs)</mwsh:code></mcode-xmlized>
+      <mcode-count>19</mcode-count>
+      <cellOutputTarget>25</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>26</count>
+      <steptitle>b)</steptitle>
+      <cellOutputTarget>26</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>27</count>
+      <text>
+         <p>Samplingfrekvens på 16kHz:</p>
+      </text>
+      <mcode>[y] = audioread('Dolly.wav');
+soundsc(y,16000)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">[y] = audioread(<mwsh:strings xml:space="preserve">'Dolly.wav'</mwsh:strings>);
+soundsc(y,16000)</mwsh:code></mcode-xmlized>
+      <mcode-count>20</mcode-count>
+      <cellOutputTarget>27</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>28</count>
+      <text>
+         <p>Ved 16kHz blir sangstemmen mørkere og sangen tregere.</p>
+      </text>
+      <cellOutputTarget>28</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>29</count>
+      <text>
+         <p>Samplingfrekvens på 32kHz:</p>
+      </text>
+      <mcode>[y] = audioread('Dolly.wav');
+soundsc(y,32000)</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">[y] = audioread(<mwsh:strings xml:space="preserve">'Dolly.wav'</mwsh:strings>);
+soundsc(y,32000)</mwsh:code></mcode-xmlized>
+      <mcode-count>21</mcode-count>
+      <cellOutputTarget>29</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>30</count>
+      <text>
+         <p>Ved 32kHz blir sangstemmen lysere og sangen går fortere.</p>
+      </text>
+      <cellOutputTarget>30</cellOutputTarget>
+   </cell>
+   <cell>
+      <count>31</count>
+      <steptitle>c)</steptitle>
+      <text>
+         <p>Lena.jpg:</p>
+      </text>
+      <mcode>A = imread('Lena.jpg');
+image(A), axis image, axis off</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">A = imread(<mwsh:strings xml:space="preserve">'Lena.jpg'</mwsh:strings>);
+image(A), axis <mwsh:strings xml:space="preserve">image</mwsh:strings>, axis <mwsh:strings xml:space="preserve">off</mwsh:strings></mwsh:code></mcode-xmlized>
+      <mcode-count>22</mcode-count>
+      <cellOutputTarget>31</cellOutputTarget>
+      <img src="oving1Sigkom_05.png"/>
+   </cell>
+   <cell>
+      <count>32</count>
+      <steptitle>d)</steptitle>
+      <text>
+         <p>The negative image:</p>
+      </text>
+      <mcode>IM2 = imcomplement(A);
+image(IM2), axis image, axis off</mcode>
+      <mcode-xmlized>
+         <mwsh:code xml:space="preserve">IM2 = imcomplement(A);
+image(IM2), axis <mwsh:strings xml:space="preserve">image</mwsh:strings>, axis <mwsh:strings xml:space="preserve">off</mwsh:strings></mwsh:code></mcode-xmlized>
+      <mcode-count>23</mcode-count>
+      <cellOutputTarget>32</cellOutputTarget>
+      <img src="oving1Sigkom_06.png"/>
+   </cell>
+   <originalCode>%% Øving 1 - Signalbehandling
+% 
+% * Magnus Nøkleby Pedersen (magnusnp)
+% * MTEL
+% 
+
+
+%% Problem 1
+%% a)
+A = [1 2; 3 4]
+B = [2 -1; 0 1]
+v = [0 0 1]
+C = A*B
+%%
+% Multiplisere matrisene komponentvis:
+D = A.*B
+%%
+% Transponerer matrise v
+vT = transpose(v)
+
+%% b)
+y = zeros(1,10)
+%%
+% Even indexed elements = Pi
+%%
+% Solution 1:
+for i=2:2:10
+    y(i) = pi;
+end
+%%
+% Solution 2:
+y([2:2:end]) = pi
+
+%% Problem 2
+
+z1 = 2*exp((pi/6)*j);
+z2 = j-1;
+%% a) Imaginary and real parts:
+% Z1:
+imag(z1)
+real(z1)
+%%
+% Z2^*:
+imag(conj(z2))
+real(conj(z1))
+%%
+% Z1*Z2:
+imag(z1*z2)
+real(z1*z2)
+%%
+% Z1/Z2:
+imag(z1/z2)
+real(z1/z2)
+
+%% b) Absolute value and argument:
+% Z1^*:
+abs(conj(z1))
+angle(conj(z1))
+%%
+% Z2:
+abs(z2)
+angle(conj(z2))
+%%
+% Z1*Z2:
+abs(z1*z2)
+angle(z1*z2)
+%%
+% Z1/Z2:
+abs(z1/z2)
+angle(z1/z2)
+%% Problem 3
+% y1 = sin(t)
+%%
+% y2 = t^2 + cos(t) + e^(t^2)/(10^16)
+
+%% a)
+t = 0:0.01;2*pi;
+y1 = sin(t);
+y2 = t.^2 + cos(t) + exp(t.^2)/(10.^16);
+plot(t, sin(t))
+title('sin(t), t\in [0,2\pi]')
+ylabel('y1')
+figure
+plot(t, y2, 'r')
+xlabel('t')
+ylabel('y2')
+title('t^2 + cos(t) + e^{t^2}/10^{16}, t \in [0, 2\pi]')
+xlabel('t')
+%%
+% Subplots av funksjonene Y1 og Y2:
+subplot(2,1,1);
+plot(t,sin(t),'r');
+ylabel('y = sin(t)');
+subplot(2,1,2);
+plot(t,t.^2 + cos(t) + exp(t.^2)/(10.^16));
+axis([0,2*pi,0,5]);
+xlabel('t'); ylabel('y = t^2 + cos(t) + e^(t^2)/(10^16)');
+subplot(111)
+%% b) Plot av diskret signal
+n = -10:10;
+stem(n, sin(2*pi*(n/10)));
+title('y3(n) = sin(2*pi*(n/10))');
+xlabel('n');
+ylabel('y');
+
+%% Problem 4
+%% a) Lese inn Dolly.wav og høre på den:
+[y,Fs] = audioread('Dolly.wav');
+soundsc(y,Fs)
+%% b) 
+%%
+% Samplingfrekvens på 16kHz:
+[y] = audioread('Dolly.wav');
+soundsc(y,16000)
+%%
+% Ved 16kHz blir sangstemmen mørkere og sangen tregere.
+%%
+% Samplingfrekvens på 32kHz:
+[y] = audioread('Dolly.wav');
+soundsc(y,32000)
+%%
+% Ved 32kHz blir sangstemmen lysere og sangen går fortere.
+%% c)
+% Lena.jpg:
+A = imread('Lena.jpg');
+image(A), axis image, axis off
+%% d)
+% The negative image:
+IM2 = imcomplement(A);
+image(IM2), axis image, axis off</originalCode>
+   <m-file>oving1Sigkom</m-file>
+   <filename>/Users/Magnus/Documents/MATLAB/oving1Sigkom.m</filename>
+   <outputdir>/Users/Magnus/Documents/MATLAB/html</outputdir>
+</mscript>
